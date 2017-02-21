@@ -46,7 +46,7 @@ class ParkingLotsView(BaseView):
         return parking_lot, extension
 
     def _map_form_to_resources_put(self, form, form_id):
-        parking_lot, extension = self.map_form_to_resources_post(form)
+        parking_lot, extension = self._map_form_to_resources_post(form)
         parking_lot['id'] = form_id
         parking_lot['slots_start'] = form.slots_start.data
         parking_lot['slots_end'] = form.slots_end.data
