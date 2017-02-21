@@ -20,9 +20,12 @@ class ParkingLotsService(object):
         return self._confd.parking_lots.list()
 
     def get(self, parking_lot_id):
-        return self._confd.parking_lots.get(parking_lot_id)
+        return {'parking_lot': self._confd.parking_lots.get(parking_lot_id)}
 
-    def update(self, parking_lot, extension):
+    def update(self, resources):
+        conference = resources.get('conference')
+        extension = resources.get('extension')
+
         existing_extension = self._get_main_extension(parking_lot['id'])
 
         self._confd.parking_lots.update(parking_lot)
@@ -42,7 +45,10 @@ class ParkingLotsService(object):
             return extension
         return None
 
-    def create(self, parking_lot, extension):
+    def create(self, resources):
+        parking_lot = resources.get('parking_lot')
+        extension = resources.get('extension')
+
         parking_lot = self._confd.parking_lots.create(parking_lot)
         if parking_lot and extension:
             self._add_extension(parking_lot['id'], extension)
