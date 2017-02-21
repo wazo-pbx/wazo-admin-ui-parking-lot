@@ -10,7 +10,7 @@ from wtforms.fields import IntegerField
 from wtforms.validators import InputRequired
 from wtforms.validators import Optional
 
-class ParkingLotForm(Form):
+class ParkingLotForm(FlaskForm):
     name = TextField('Name', [InputRequired()])
     extension = TextField('Extension', [InputRequired()])
     slots_start = TextField('Slots Start', [InputRequired()])
