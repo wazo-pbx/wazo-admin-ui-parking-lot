@@ -20,7 +20,7 @@ class Plugin(object):
         config = dependencies['config']
 
         ParkingLotsView.service = ParkingLotsService(config['confd'])
-        ParkingLotsView.register(parkinglots, route_base='/parking_lots')
+        ParkingLotsView.register(parkinglots, route_base='/parkinglots')
         register_flaskview(parkinglots, ParkingLotsView)
 
         core.register_blueprint(parkinglots)
