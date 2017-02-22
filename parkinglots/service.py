@@ -23,7 +23,7 @@ class ParkingLotsService(object):
         return {'parking_lot': self._confd.parking_lots.get(parking_lot_id)}
 
     def update(self, resources):
-        conference = resources.get('conference')
+        parking_lot = resources.get('parking_lot')
         extension = resources.get('extension')
 
         existing_extension = self._get_main_extension(parking_lot['id'])
