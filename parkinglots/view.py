@@ -15,6 +15,8 @@ from .form import ParkingLotForm
 
 class ParkingLotSchema(BaseSchema):
 
+    timeout = fields.Integer(allow_none=True)
+
     class Meta:
         additional = ('name',
                       'slots_start',
