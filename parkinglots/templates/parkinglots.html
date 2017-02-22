@@ -1,15 +1,7 @@
 {% extends "layout.html" %}
 
 {% block content_header %}
-    <section class="content-header">
-      <h1>
-        Parking Lots
-      </h1>
-      <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-automobile"></i> Parking Lots</a></li>
-        <li class="active">List</li>
-      </ol>
-    </section>
+  {{ build_breadcrumb('Parking Lots', 'List of your parking', 'automobile', ['List']) }}
 {% endblock %}
 
 {% block content %}
@@ -28,14 +20,14 @@
         </div>
 
         <div class="box-body">
-          <table id="table-parking-lots" class="table table-condensed">
+          <table id="table-list" class="table table-condensed">
             <thead>
               <tr>
                 <th>Name</th>
                 <th>Extension</th>
                 <th>Slot start</th>
                 <th>Slot end</th>
-                <th style="width: 80px">Actions</th>
+                <th class="no-sort" style="width: 80px">Actions</th>
               </tr>
             </thead>
             <tbody>

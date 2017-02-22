@@ -15,14 +15,12 @@ from .form import ParkingLotForm
 
 class ParkingLotSchema(BaseSchema):
 
-    timeout = fields.Integer(allow_none=True)
-
     class Meta:
-        additional = ('name',
-                      'slots_start',
-                      'slots_end',
-                      'music_on_hold',
-                      'timeout')
+        fields = ('name',
+                  'slots_start',
+                  'slots_end',
+                  'music_on_hold',
+                  'timeout')
 
 
 class ExtensionSchema(BaseSchema):

@@ -1,15 +1,7 @@
 {% extends "layout.html" %}
 
 {% block content_header %}
-    <section class="content-header">
-      <h1>
-        Parking Lots
-      </h1>
-      <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-automobile"></i> Parking lot</a></li>
-        <li class="active">View</li>
-      </ol>
-    </section>
+  {{ build_breadcrumb('Parking Lots', 'Information about your parking', 'automobile', ['Edit', resources.parking_lot.name ]) }}
 {% endblock %}
 
 {% block content %}
