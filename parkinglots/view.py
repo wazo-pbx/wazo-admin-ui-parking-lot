@@ -50,8 +50,8 @@ class ParkingLotsView(BaseView):
     form = ParkingLotForm
     resource = 'parking_lots'
     schema = ParkingLotFormSchema
-    templates = {'list': 'parkinglots.html',
-                 'edit': 'view_parkinglots.html'}
+    templates = {'list': 'parkinglots/list.html',
+                 'edit': 'parkinglots/view.html'}
 
     @classy_menu_item('.parkinglots', 'Parking Lots', order=2, icon="automobile")
     def index(self):
