@@ -2,25 +2,13 @@
 # Copyright 2017 by Sylvain Boily
 # SPDX-License-Identifier: GPL-3.0+
 
-from flask_login import current_user
-from xivo_confd_client import Client as ConfdClient
+from wazo_admin_ui.helpers.service import BaseConfdService
 
 
-class ParkingLotsService(object):
+class ParkingLotsService(BaseConfdService):
 
-    def __init__(self, confd_config):
-        self.confd_config = confd_config
-
-    @property
-    def _confd(self):
-        token = current_user.get_id()
-        return ConfdClient(token=token, **self.confd_config)
-
-    def list(self):
-        return self._confd.parking_lots.list()
-
-    def get(self, parking_lot_id):
-        return {'parking_lot': self._confd.parking_lots.get(parking_lot_id)}
+    resource = 'parking_lot'
+    confd_resource = 'parking_lots'
 
     def update(self, resources):
         parking_lot = resources.get('parking_lot')
