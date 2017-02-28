@@ -2,15 +2,15 @@
 # Copyright 2017 The Wazo Authors  (see the AUTHORS file)
 # SPDX-License-Identifier: GPL-3.0+
 
-from flask import Blueprint
 from flask_menu.classy import register_flaskview
+
+from wazo_admin_ui.helpers.plugin import create_blueprint
 
 
 from .service import ParkingLotService
 from .view import ParkingLotView
 
-parking_lot = Blueprint('parkinglots', __name__, template_folder='templates',
-                        static_folder='static', static_url_path='/%s' % __name__)
+parking_lot = create_blueprint('parking_lot', __name__)
 
 
 class Plugin(object):
