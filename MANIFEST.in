@@ -1,2 +1,2 @@
-recursive-include parkinglots/templates *
-recursive-include parkinglots/static *
+recursive-include parking_lot/templates *
+recursive-include parking_lot/static *
