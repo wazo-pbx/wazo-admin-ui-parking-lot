@@ -15,7 +15,7 @@
             <h3 class="box-title">Parking lot {{ resources.parking_lot.name }}</h3>
             <div class="box-tools"></div>
           </div>
-          <form class="form-horizontal" method="post" action="{{ url_for('.ParkingLotsView:put', id=resources.parking_lot.id) }}">
+          <form class="form-horizontal" method="post" action="{{ url_for('.ParkingLotView:put', id=resources.parking_lot.id) }}">
             <div class="box-body">
               {{ form.csrf_token }}
               {{ render_field(form.name) }}
