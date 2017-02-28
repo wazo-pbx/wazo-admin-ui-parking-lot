@@ -6,10 +6,10 @@ from flask import Blueprint
 from flask_menu.classy import register_flaskview
 
 
-from .service import ParkingLotsService
-from .view import ParkingLotsView
+from .service import ParkingLotService
+from .view import ParkingLotView
 
-parkinglots = Blueprint('parkinglots', __name__, template_folder='templates',
+parking_lot = Blueprint('parkinglots', __name__, template_folder='templates',
                         static_folder='static', static_url_path='/%s' % __name__)
 
 
@@ -19,8 +19,8 @@ class Plugin(object):
         core = dependencies['flask']
         config = dependencies['config']
 
-        ParkingLotsView.service = ParkingLotsService(config['confd'])
-        ParkingLotsView.register(parkinglots, route_base='/parkinglots')
-        register_flaskview(parkinglots, ParkingLotsView)
+        ParkingLotView.service = ParkingLotService(config['confd'])
+        ParkingLotView.register(parking_lot, route_base='/parkinglots')
+        register_flaskview(parking_lot, ParkingLotView)
 
-        core.register_blueprint(parkinglots)
+        core.register_blueprint(parking_lot)

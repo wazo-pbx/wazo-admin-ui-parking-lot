@@ -7,10 +7,10 @@ from setuptools import find_packages
 from setuptools import setup
 
 setup(
-    name='wazo_admin_ui_parking_lots',
+    name='wazo_admin_ui_parking_lot',
     version='0.1',
 
-    description='Wazo Admin Parking Lots',
+    description='Wazo Admin Parking Lot',
 
     author='Wazo Authors',
     author_email='dev@wazo.community',
@@ -23,7 +23,7 @@ setup(
 
     entry_points={
         'wazo_admin_ui.plugins': [
-            'parkinglots = parkinglots.plugin:Plugin',
+            'parking_lot = parking_lot.plugin:Plugin',
         ]
     }
 )

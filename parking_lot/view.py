@@ -45,7 +45,7 @@ class ParkingLotFormSchema(BaseSchema):
                 'extension': data}
 
 
-class ParkingLotsView(BaseView):
+class ParkingLotView(BaseView):
 
     form = ParkingLotForm
     resource = 'parking_lots'
@@ -55,4 +55,4 @@ class ParkingLotsView(BaseView):
 
     @classy_menu_item('.parkinglots', 'Parking Lots', order=2, icon="automobile")
     def index(self):
-        return super(ParkingLotsView, self).index()
+        return super(ParkingLotView, self).index()
