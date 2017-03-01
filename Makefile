@@ -5,5 +5,5 @@ install:
 
 uninstall:
 	pip uninstall wazo-admin-ui-parking-lot
-	rm /etc/wazo-admin-ui/conf.d/parkingi_lot.yml
+	rm /etc/wazo-admin-ui/conf.d/parking_lot.yml
 	systemctl restart wazo-admin-ui
