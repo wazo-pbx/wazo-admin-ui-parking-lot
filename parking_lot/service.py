@@ -7,8 +7,8 @@ from wazo_admin_ui.helpers.service import BaseConfdService
 
 class ParkingLotService(BaseConfdService):
 
-    resource = 'parking_lot'
-    confd_resource = 'parking_lots'
+    resource_name = 'parking_lot'
+    resource_confd = 'parking_lots'
 
     def update(self, resources):
         parking_lot = resources.get('parking_lot')
