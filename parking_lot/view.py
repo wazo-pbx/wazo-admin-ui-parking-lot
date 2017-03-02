@@ -8,7 +8,7 @@ from flask_menu.classy import classy_menu_item
 from marshmallow import fields
 
 from wazo_admin_ui.helpers.classful import BaseView
-from wazo_admin_ui.helpers.mallow import BaseSchema, BaseAggregatorSchema
+from wazo_admin_ui.helpers.mallow import BaseSchema, BaseAggregatorSchema, extract_form_fields
 
 from .form import ParkingLotForm
 
@@ -16,11 +16,7 @@ from .form import ParkingLotForm
 class ParkingLotSchema(BaseSchema):
 
     class Meta:
-        fields = ('name',
-                  'slots_start',
-                  'slots_end',
-                  'music_on_hold',
-                  'timeout')
+        fields = extract_form_fields(ParkingLotForm)
 
 
 class ExtensionSchema(BaseSchema):
