@@ -5,18 +5,9 @@
 {% endblock %}
 
 {% block content %}
-
-  <section class="content">
-    <div class="row">
-      <div class="col-md-6">
-        <div class="box box-primary">
-          <div class="box-header with-border">
-            <i class="fa fa-automobile"></i>
-            <h3 class="box-title">Parking lot {{ resources.parking_lot.name }}</h3>
-            <div class="box-tools"></div>
-          </div>
-          <form class="form-horizontal" method="post" action="{{ url_for('.ParkingLotView:put', id=resources.parking_lot.id) }}">
-            <div class="box-body">
+  {% call build_form_containers('Parking Lot' ~ ' ' ~ resources.parking_lot.name, 'automobile') %}
+    {% call build_form(action=url_for('.ParkingLotView:put', id=resources.parking_lot.id)) %}
+      {% call add_default_fields(form=form, submit_value="Update") %}
               {{ form.csrf_token }}
               {{ render_field(form.name) }}
               {{ render_field(form.extension) }}
@@ -24,14 +15,7 @@
               {{ render_field(form.slots_end) }}
               {{ render_field(form.music_on_hold) }}
               {{ render_field(form.timeout) }}
-	        </div>
-          <div class="box-footer">
-	        {{ render_field(form.submit, class_="btn btn-primary pull-right", value="Update", with_label=False) }}
-          </div>
-        </form>
-        </div>
-      </div>
-    </div>
-  </section>
-
+      {% endcall %}
+    {% endcall %}
+  {% endcall %}
 {% endblock %}

@@ -5,89 +5,47 @@
 {% endblock %}
 
 {% block content %}
-
   <section class="content">
-    <div class="col-md-8">
-      <div class="box box-primary">
-        <div class="box-header with-border">
-          <i class="fa fa-automobile"></i>
-          <h3 class="box-title">Parking Lots</h3>
-          <div class="box-tools">
-            <a href="#" id="add-form" class="btn btn-box-tool">
-              <i class="fa fa-plus"></i>
-            </a>
-          </div>
-        </div>
+    {% call build_list_containers('Parking Lots', 'automobile') %}
+      {% call build_list_table() %}
+        {% call build_list_table_headers() %}
+           <th>Name</th>
+           <th>Extension</th>
+           <th>Slot start</th>
+           <th>Slot end</th>
+          {{ add_list_table_header_action() }}
+        {% endcall %}
+        {% call(parking_lot) build_list_table_rows(resource_list['items']) %}
+          <td>{{ parking_lot.name }}</td>
+          <td>
+            {% for extension in parking_lot.extensions %}
+              <strong>internal:</strong> {{ extension.exten }}
+            {% endfor %}
+            {% if not parking_lot.extensions %}
+              -
+            {% endif %}
+          </td>
+          <td>{{ parking_lot.slots_start }}</td>
+          <td>{{ parking_lot.slots_end }}</td>
+          <td>
+            {{ add_edit_button(href=url_for('.ParkingLotView:get', id=parking_lot.id)) }}
+            {{ add_delete_button(href=url_for('.ParkingLotView:delete', id=parking_lot.id)) }}
+          </td>
+        {% endcall %}
+      {% endcall %}
+    {% endcall %}
 
-        <div class="box-body">
-          <table id="table-list" class="table table-condensed">
-            <thead>
-              <tr>
-                <th>Name</th>
-                <th>Extension</th>
-                <th>Slot start</th>
-                <th>Slot end</th>
-                <th class="no-sort" style="width: 80px">Actions</th>
-              </tr>
-            </thead>
-            <tbody>
-              {% for parking in resource_list['items'] %}
-              <tr>
-                <td>{{ parking.name }}</td>
-                <td>
-                  {% for p in parking.extensions %}
-                    <strong>internal:</strong> {{ p.exten }}
-                  {% endfor %}
-                  {% if not parking.extensions %}
-                    -
-                  {% endif %}
-                </td>
-                <td>{{ parking.slots_start }}</td>
-                <td>{{ parking.slots_end }}</td>
-                <td>
-                  <a href="{{ url_for('.ParkingLotView:get', id=parking.id) }}" class="btn btn-xs btn-info">
-                    <i class="fa fa-eye"></i>
-                  </a>
-                  <a href="{{ url_for('.ParkingLotView:delete', id=parking.id) }}" class="btn btn-xs btn-danger" onclick="return confirm('Are you sure you want to delete this item?');">
-                    <i class="fa fa-minus"></i>
-                  </a>
-                </td>
-              </tr>
-              {% endfor %}
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </div>
-
-    <div class="col-lg-4">
-      <div class="box box-info hidden" id="view-add-form">
-        <div class="box-header with-border">
-          <h3 class="box-title">Add Parking Lot</h3>
-          <div class="pull-right box-tools">
-            <button data-original-title="Remove" type="button" class="btn btn-box-tool" data-widget="remove" data-toggle="tooltip" title="">
-              <i class="fa fa-minus"></i>
-           </button>
-         </div>
-        </div>
-
-        <form class="form-horizontal" method="post" action="">
-        <div class="box-body">
-          {{ form.csrf_token() }}
+    {% call build_hidden_add_containers('Add Parking Lot') %}
+      {% call build_form() %}
+        {% call add_default_fields(form=form, submit_value="Add") %}
           {{ render_field(form.name) }}
           {{ render_field(form.extension) }}
           {{ render_field(form.slots_start) }}
           {{ render_field(form.slots_end) }}
           {{ render_field(form.music_on_hold) }}
           {{ render_field(form.timeout) }}
-        </div>
-        <div class="box-footer">
-          {{ render_field(form.submit, class_="btn btn-primary pull-right", value="Add", with_label=False) }}
-        </div>
-        </form>
-      </div>
-
-    </div>
+        {% endcall %}
+      {% endcall %}
+    {% endcall %}
   </section>
-
 {% endblock %}
