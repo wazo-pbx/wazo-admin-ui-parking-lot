@@ -5,16 +5,18 @@
 {% endblock %}
 
 {% block content %}
-  {% call build_form_containers('Parking Lot' ~ ' ' ~ resources.parking_lot.name, 'automobile') %}
-    {% call build_form(action=url_for('.ParkingLotView:put', id=resources.parking_lot.id)) %}
-      {% call add_default_fields(form=form, submit_value="Update") %}
-              {{ form.csrf_token }}
-              {{ render_field(form.name) }}
-              {{ render_field(form.extension) }}
-              {{ render_field(form.slots_start) }}
-              {{ render_field(form.slots_end) }}
-              {{ render_field(form.music_on_hold) }}
-              {{ render_field(form.timeout) }}
+  {% call build_section_row() %}
+    {% call build_form_box('Parking Lot', resources.parking_lot.name, 'automobile') %}
+      {% call build_form(action=url_for('.ParkingLotView:put', id=resources.parking_lot.id)) %}
+        {% call add_default_fields(form=form, submit_value="Update") %}
+                {{ form.csrf_token }}
+                {{ render_field(form.name) }}
+                {{ render_field(form.extension) }}
+                {{ render_field(form.slots_start) }}
+                {{ render_field(form.slots_end) }}
+                {{ render_field(form.music_on_hold) }}
+                {{ render_field(form.timeout) }}
+        {% endcall %}
       {% endcall %}
     {% endcall %}
   {% endcall %}
