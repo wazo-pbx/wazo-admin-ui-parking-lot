@@ -45,4 +45,7 @@ class ParkingLotView(BaseView):
         schema = self.schema()
         data = schema.load(resources).data
         main_exten = schema.get_main_exten(resources['parking_lot'].get('extensions', {}))
-        return self.form(data=data['parking_lot'], extension=main_exten)
+        form = self.form(data=data['parking_lot'], extension=main_exten)
+        moh_name = resources['parking_lot'].get('music_on_hold')
+        form.music_on_hold.choices = [(moh_name, moh_name)]
+        return form
