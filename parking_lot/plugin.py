@@ -17,9 +17,8 @@ class Plugin(object):
 
     def load(self, dependencies):
         core = dependencies['flask']
-        config = dependencies['config']
 
-        ParkingLotView.service = ParkingLotService(config['confd'])
+        ParkingLotView.service = ParkingLotService()
         ParkingLotView.register(parking_lot, route_base='/parkinglots')
         register_flaskview(parking_lot, ParkingLotView)
 
