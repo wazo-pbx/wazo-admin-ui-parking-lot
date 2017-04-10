@@ -11,7 +11,7 @@
         {% call add_default_fields(form=form, submit_value="Update") %}
                 {{ form.csrf_token }}
                 {{ render_field(form.name) }}
-                {{ render_field(form.extension) }}
+                {{ render_field(form.extensions[0].exten) }}
                 {{ render_field(form.slots_start) }}
                 {{ render_field(form.slots_end) }}
                 {{ render_field(form.music_on_hold, data_listing_href=url_for(listing_urls['moh'])) }}
