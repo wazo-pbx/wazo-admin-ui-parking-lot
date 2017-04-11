@@ -7,5 +7,4 @@ from wazo_admin_ui.helpers.service import BaseConfdExtensionService
 
 class ParkingLotService(BaseConfdExtensionService):
 
-    resource_name = 'parking_lot'
     resource_confd = 'parking_lots'

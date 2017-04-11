@@ -1,13 +1,13 @@
 {% extends "layout.html" %}
 
 {% block content_header %}
-  {{ build_breadcrumb('Parking Lots', 'Information about your parking', 'automobile', ['Edit', resources.parking_lot.name ]) }}
+  {{ build_breadcrumb('Parking Lots', 'Information about your parking', 'automobile', ['Edit', resource.name ]) }}
 {% endblock %}
 
 {% block content %}
   {% call build_section_row() %}
-    {% call build_form_box('Parking Lot', resources.parking_lot.name, 'automobile') %}
-      {% call build_form(action=url_for('.ParkingLotView:put', id=resources.parking_lot.id)) %}
+    {% call build_form_box('Parking Lot', resource.name, 'automobile') %}
+      {% call build_form(action=url_for('.ParkingLotView:put', id=resource.id)) %}
         {% call add_default_fields(form=form, submit_value="Update") %}
                 {{ form.csrf_token }}
                 {{ render_field(form.name) }}
