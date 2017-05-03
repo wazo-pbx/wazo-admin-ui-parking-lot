@@ -3,12 +3,13 @@ Parking Lots plugin for wazo-admin-ui
 Install
 -------
 
-    make install
+    wazo/rules build
+    wazo/rules install
 
 Uninstall
 ---------
 
 You need to have python-pip installed.
 
-    make uninstall
+    wazo/rules uninstall
 
