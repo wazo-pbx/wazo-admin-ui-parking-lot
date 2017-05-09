@@ -23,7 +23,7 @@ setup(
 
     entry_points={
         'wazo_admin_ui.plugins': [
-            'parking_lot = parking_lot.plugin:Plugin',
+            'parking_lot = wazo_plugind_admin_ui_parking_lot_official.plugin:Plugin',
         ]
     }
 )

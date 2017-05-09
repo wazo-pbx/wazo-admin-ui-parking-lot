@@ -1,2 +1,2 @@
-recursive-include parking_lot/templates *
-recursive-include parking_lot/static *
+recursive-include wazo_plugind_admin_ui_parking_lot_official/templates *
+recursive-include wazo_plugind_admin_ui_parking_lot_official/static *
