@@ -15,7 +15,7 @@ from wazo_admin_ui.helpers.form import BaseForm
 
 class ExtensionForm(BaseForm):
     exten = StringField('Extension')
-    context = StringField(default='default')
+    context = SelectField('Context')
 
 
 class ParkingLotForm(BaseForm):
