@@ -8,12 +8,11 @@
   <section class="content">
     {% call build_list_containers('Parking Lots', 'automobile') %}
       {% call build_list_table() %}
-        {% call build_list_table_headers() %}
+        {% call build_list_table_headers(get=url_for('.ParkingLotView:get', id=''), delete=url_for('.ParkingLotView:delete', id='')) %}
            <th>Name</th>
            <th>Extension</th>
            <th>Slot start</th>
            <th>Slot end</th>
-          {{ add_list_table_header_action() }}
         {% endcall %}
         {% call(parking_lot) build_list_table_rows(resource_list['items']) %}
           <td>{{ parking_lot.name }}</td>
@@ -27,10 +26,6 @@
           </td>
           <td>{{ parking_lot.slots_start }}</td>
           <td>{{ parking_lot.slots_end }}</td>
-          <td>
-            {{ add_edit_button(href=url_for('.ParkingLotView:get', id=parking_lot.id)) }}
-            {{ add_delete_button(href=url_for('.ParkingLotView:delete', id=parking_lot.id)) }}
-          </td>
         {% endcall %}
       {% endcall %}
     {% endcall %}
