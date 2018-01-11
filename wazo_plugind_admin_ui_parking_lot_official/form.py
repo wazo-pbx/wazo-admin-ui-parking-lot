@@ -13,8 +13,8 @@ from wazo_admin_ui.helpers.form import BaseForm
 
 
 class ExtensionForm(BaseForm):
-    exten = StringField('Extension')
-    context = SelectField('Context')
+    exten = StringField('Extension', validators=[InputRequired()])
+    context = SelectField('Context', validators=[InputRequired()])
 
 
 class ParkingLotForm(BaseForm):

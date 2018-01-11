@@ -11,10 +11,17 @@
         {% call add_default_fields(form=form, submit_value="Update") %}
                 {{ form.csrf_token }}
                 {{ render_field(form.name) }}
+                {{ render_field(form.extensions[0].exten,
+                                data_allow_custom_values=True,
+                                divclass='col-sm-2',
+                                inputclass='ui-helper-clearfix',
+                                class_='parking-lot-exten') }}
                 {{ render_field(form.extensions[0].context,
-                                data_allow_clear=true,
+                                with_label=False,
+                                divclass='col-sm-4',
+                                class_='parking-lot-context',
+                                placeholder=_('Choose Context'),
                                 data_listing_href=url_for(listing_urls['context_by_type'], type_='internal')) }}
-                {{ render_field(form.extensions[0].exten) }}
                 {{ render_field(form.slots_start) }}
                 {{ render_field(form.slots_end) }}
                 {{ render_field(form.music_on_hold, data_listing_href=url_for(listing_urls['moh'])) }}
