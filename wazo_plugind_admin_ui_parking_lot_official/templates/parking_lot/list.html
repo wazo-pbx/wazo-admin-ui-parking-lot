@@ -1,24 +1,24 @@
 {% extends "layout.html" %}
 
 {% block content_header %}
-  {{ build_breadcrumb('Parking Lots', 'List of your parking', 'automobile', ['List']) }}
+  {{ build_breadcrumb(_('Parking Lots'), _('List of your parking'), 'automobile', [_('List')]) }}
 {% endblock %}
 
 {% block content %}
   <section class="content">
-    {% call build_list_containers('Parking Lots', 'automobile') %}
+    {% call build_list_containers(_('Parking Lots'), 'automobile') %}
       {% call build_list_table() %}
         {% call build_list_table_headers(get=url_for('.ParkingLotView:get', id=''), delete=url_for('.ParkingLotView:delete', id='')) %}
-           <th>Name</th>
-           <th>Extension</th>
-           <th>Slot start</th>
-           <th>Slot end</th>
+           <th>{{ _('Name') }}</th>
+           <th>{{ _('Extension') }}</th>
+           <th>{{ _('Slot start') }}</th>
+           <th>{{ _('Slot end') }}</th>
         {% endcall %}
         {% call(parking_lot) build_list_table_rows(resource_list['items']) %}
           <td>{{ parking_lot.name }}</td>
           <td>
             {% for extension in parking_lot.extensions %}
-              <strong>internal:</strong> {{ extension.exten }}
+              <strong>{{ _('internal') }}:</strong> {{ extension.exten }}
             {% endfor %}
             {% if not parking_lot.extensions %}
               -
@@ -30,14 +30,21 @@
       {% endcall %}
     {% endcall %}
 
-    {% call build_hidden_add_containers('Add Parking Lot') %}
+    {% call build_hidden_add_containers(_('Add Parking Lot')) %}
       {% call build_form() %}
-        {% call add_default_fields(form=form, submit_value="Add") %}
+        {% call add_default_fields(form=form, submit_value=_('Add')) %}
           {{ render_field(form.name) }}
+          {{ render_field(form.extensions[0].exten,
+                          data_allow_custom_values=True,
+                          divclass='col-sm-2',
+                          inputclass='ui-helper-clearfix',
+                          class_='parking-lot-exten') }}
           {{ render_field(form.extensions[0].context,
-                          data_allow_clear=true,
+                          with_label=False,
+                          divclass='col-sm-4',
+                          class_='parking-lot-context',
+                          placeholder=_(_('Choose Context')),
                           data_listing_href=url_for(listing_urls['context_by_type'], type_='internal')) }}
-          {{ render_field(form.extensions[0].exten) }}
           {{ render_field(form.slots_start) }}
           {{ render_field(form.slots_end) }}
           {{ render_field(form.music_on_hold, data_listing_href=url_for(listing_urls['moh'])) }}
