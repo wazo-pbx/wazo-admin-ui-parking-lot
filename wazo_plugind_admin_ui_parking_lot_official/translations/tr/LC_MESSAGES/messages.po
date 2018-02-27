@@ -1,14 +1,14 @@
-# Translations template for wazo-admin-ui-parking-lot.
+# Translations template for wazo_admin_ui_parking_lot.
 # Copyright (C) 2018 The Wazo Authors  (see the AUTHORS file)
 # This file is distributed under the same license as the
-# wazo-admin-ui-parking-lot project.
+# wazo_admin_ui_parking_lot project.
 # Wazo Dev Team <dev@wazo.community>, 2018.
 # 
 msgid ""
 msgstr ""
-"Project-Id-Version: wazo-admin-ui-parking-lot 0.1\n"
+"Project-Id-Version: wazo_admin_ui_parking_lot 0.1\n"
 "Report-Msgid-Bugs-To: 'dev@wazo.community'\n"
-"POT-Creation-Date: 2018-02-26 10:49-0500\n"
+"POT-Creation-Date: 2018-02-27 13:43-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Language-Team: Turkish (https://www.transifex.com/wazo/teams/69545/tr/)\n"
 "MIME-Version: 1.0\n"
