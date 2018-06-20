@@ -4,12 +4,15 @@
 # wazo_admin_ui_parking_lot project.
 # Wazo Dev Team <dev@wazo.community>, 2018.
 # 
+# Translators:
+# Roberto Xavier dos Santos <rxsantos@gmail.com>, 2018
 msgid ""
 msgstr ""
 "Project-Id-Version: wazo_admin_ui_parking_lot 0.1\n"
 "Report-Msgid-Bugs-To: 'dev@wazo.community'\n"
 "POT-Creation-Date: 2018-02-27 13:43-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Roberto Xavier dos Santos <rxsantos@gmail.com>, 2018\n"
 "Language-Team: Portuguese (Brazil) (https://www.transifex.com/wazo/teams/69545/pt_BR/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
@@ -21,89 +24,89 @@ msgstr ""
 #: wazo_plugind_admin_ui_parking_lot_official/form.py:17
 #: wazo_plugind_admin_ui_parking_lot_official/templates/parking_lot/list.html:13
 msgid "Extension"
-msgstr ""
+msgstr "Extensão"
 
 #: wazo_plugind_admin_ui_parking_lot_official/form.py:18
 msgid "Context"
-msgstr ""
+msgstr "Contexto"
 
 #: wazo_plugind_admin_ui_parking_lot_official/form.py:22
 #: wazo_plugind_admin_ui_parking_lot_official/templates/parking_lot/list.html:12
 msgid "Name"
-msgstr ""
+msgstr "Nome"
 
 #: wazo_plugind_admin_ui_parking_lot_official/form.py:24
 msgid "Slots Start"
-msgstr ""
+msgstr "Vagas Iniciais"
 
 #: wazo_plugind_admin_ui_parking_lot_official/form.py:25
 msgid "Slots End"
-msgstr ""
+msgstr "Vagas Finais"
 
 #: wazo_plugind_admin_ui_parking_lot_official/form.py:26
 msgid "Music On Hold"
-msgstr ""
+msgstr "Música em Espera"
 
 #: wazo_plugind_admin_ui_parking_lot_official/form.py:27
 msgid "Timeout"
-msgstr ""
+msgstr "Tempo Limite"
 
 #: wazo_plugind_admin_ui_parking_lot_official/form.py:28
 msgid "Submit"
-msgstr ""
+msgstr "Submeter"
 
 #: wazo_plugind_admin_ui_parking_lot_official/templates/parking_lot/edit.html:4
 #: wazo_plugind_admin_ui_parking_lot_official/templates/parking_lot/list.html:4
 #: wazo_plugind_admin_ui_parking_lot_official/templates/parking_lot/list.html:9
 #: wazo_plugind_admin_ui_parking_lot_official/view.py:17
 msgid "Parking Lots"
-msgstr ""
+msgstr "Estacionamento de Chamadas"
 
 #: wazo_plugind_admin_ui_parking_lot_official/templates/parking_lot/edit.html:4
 msgid "Information about your parking"
-msgstr ""
+msgstr "Informações sobre o seu estacionamento"
 
 #: wazo_plugind_admin_ui_parking_lot_official/templates/parking_lot/edit.html:4
 msgid "Edit"
-msgstr ""
+msgstr "Editar"
 
 #: wazo_plugind_admin_ui_parking_lot_official/templates/parking_lot/edit.html:9
 msgid "Parking Lot"
-msgstr ""
+msgstr "Estacionamento"
 
 #: wazo_plugind_admin_ui_parking_lot_official/templates/parking_lot/edit.html:11
 msgid "Update"
-msgstr ""
+msgstr "Atualizar"
 
 #: wazo_plugind_admin_ui_parking_lot_official/templates/parking_lot/edit.html:23
 #: wazo_plugind_admin_ui_parking_lot_official/templates/parking_lot/list.html:46
 msgid "Choose Context"
-msgstr ""
+msgstr "Escolher Contexto"
 
 #: wazo_plugind_admin_ui_parking_lot_official/templates/parking_lot/list.html:4
 msgid "List of your parking"
-msgstr ""
+msgstr "Lista chamadas estacionadas"
 
 #: wazo_plugind_admin_ui_parking_lot_official/templates/parking_lot/list.html:4
 msgid "List"
-msgstr ""
+msgstr "Lista"
 
 #: wazo_plugind_admin_ui_parking_lot_official/templates/parking_lot/list.html:14
 msgid "Slot start"
-msgstr ""
+msgstr "Vaga Inicial"
 
 #: wazo_plugind_admin_ui_parking_lot_official/templates/parking_lot/list.html:15
 msgid "Slot end"
-msgstr ""
+msgstr "Vaga Final"
 
 #: wazo_plugind_admin_ui_parking_lot_official/templates/parking_lot/list.html:21
 msgid "internal"
-msgstr ""
+msgstr "Interno"
 
 #: wazo_plugind_admin_ui_parking_lot_official/templates/parking_lot/list.html:33
 msgid "Add Parking Lot"
-msgstr ""
+msgstr "Adicionar Estacionamento"
 
 #: wazo_plugind_admin_ui_parking_lot_official/templates/parking_lot/list.html:35
 msgid "Add"
-msgstr ""
+msgstr "Adicionar"
